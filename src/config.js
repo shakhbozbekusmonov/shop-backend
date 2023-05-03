@@ -16,6 +16,9 @@ const options = {
 		servers:[
 			{
 				url:'http://localhost:5000/'
+			},
+			{
+				url: 'https://shop-4wf6.onrender.com/'
 			}
 		],
 		
