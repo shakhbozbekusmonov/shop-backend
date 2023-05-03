@@ -19,7 +19,7 @@ class UserModel {
         return product
     }
 
-    async put({product_name, product_desc, product_price } , {product_img} , {id}){
+    async put({product_name, product_desc, product_price, product_img } , {id}){
         let productImage = v4()+'.'+product_img.name.replace(/\s/g," ").split('.')[1]
         let product = await fetch(PUT , product_name  , product_desc , productImage , product_price , id)
         product_img.mv(path.join(process.cwd(),'src', "static" , productImage) , (err) =>{
