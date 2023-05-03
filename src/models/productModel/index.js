@@ -8,7 +8,7 @@ class UserModel {
         return await fetchAll(GET)
     }
 
-    async post({product_name, product_desc, product_price } , {product_img}){
+    async post({product_name, product_desc, product_price, product_img}){
         let productImage = v4()+'.'+product_img.name.replace(/\s/g," ").split('.')[1]
         let product = await fetch(POST , product_name  , product_desc , productImage , product_price)
         product_img.mv(path.join(process.cwd(),'src', "static" , productImage) , (err) =>{
